@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/jest": "^24.0.23",
     "chromedriver": "^78.0.1",
-    "expect-webdriverio": "0.0.1-alpha.3",
+    "expect-webdriverio": "^0.1.2-beta.6",
     "jest": "^24.9.0",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
