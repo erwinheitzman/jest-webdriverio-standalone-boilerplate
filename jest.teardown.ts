@@ -1,3 +1,4 @@
 afterAll(async () => {
-  await browser.deleteSession();
+  await global.browser.deleteSession();
+  await global.chromedriverLauncher.onComplete()
 });
