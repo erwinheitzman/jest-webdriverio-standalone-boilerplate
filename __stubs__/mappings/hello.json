@@ -1,0 +1,10 @@
+{
+  "request": {
+      "method": "GET",
+      "url": "/dummy_data"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "hello-world.json"
+  }
+}
