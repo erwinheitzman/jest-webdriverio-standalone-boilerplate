@@ -1,7 +1,7 @@
 const sync = require('@wdio/sync').default
 const nodeFetch = require('node-fetch')
 
-test('a mocked api response', async () => {
+test(`a mocked api response created using WireMock's HTTP API`, async () => {
   const expectedRes = {
     dummy: [
       {
@@ -10,8 +10,21 @@ test('a mocked api response', async () => {
     ]
   };
 
+  const body = JSON.stringify({
+    request: {
+        method: 'GET',
+        url: '/new_data'
+    },
+    response: {
+      status: 200,
+      jsonBody: expectedRes
+    }
+  });
+
   await browser.call(async () => {
-    await nodeFetch('http://localhost:8080/dummy_data')
+    await nodeFetch('http://localhost:8080/__admin/mappings/new', { method: 'POST', body })
+
+    await nodeFetch('http://localhost:8080/new_data')
       .then((res: any) => res.json())
       .then((body: any) => expect(body).toEqual(expectedRes))
     });
