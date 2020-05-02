@@ -10,14 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "@types/jest": "^25.2.1",
-    "@types/node-fetch": "^2.5.4",
+    "@types/node-fetch": "^2.5.7",
     "@wdio/sync": "^5.18.6",
     "chromedriver": "^81.0.0",
     "expect-webdriverio": "^0.2.0",
     "jest": "^25.5.4",
     "node-fetch": "^2.6.0",
     "ts-jest": "^25.4.0",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.3",
     "wdio-chromedriver-service": "^5.0.2",
     "wdio-wiremock-service": "^2.25.1-8",
     "webdriverio": "^5.18.6"
