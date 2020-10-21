@@ -1,4 +1,4 @@
 # jest-webdriverio-standalone-boilerplate
 
-1. `npm i`
-3. run tests `npm t`
+1. install dependencies `npm ci`
+2. run tests `npm t`

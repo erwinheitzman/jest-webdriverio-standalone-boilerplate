@@ -3,5 +3,5 @@ module.exports = {
   testEnvironment: 'node',
   globalSetup: './jest.prepare.ts',
   globalTeardown: './jest.cleanup.ts',
-  setupFilesAfterEnv: ['expect-webdriverio']
+  // setupFilesAfterEnv: ['expect-webdriverio']
 };
