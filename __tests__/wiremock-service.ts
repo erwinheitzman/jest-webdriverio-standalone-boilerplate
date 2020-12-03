@@ -4,12 +4,26 @@ import nodeFetch from 'node-fetch';
 
 let browser: WebdriverIO.BrowserObject;
 
+const expectedRes = {
+  dummy: [
+    {
+    data: 'example'
+    }
+  ]
+};
+
 beforeAll(async () => {
   browser = await remote(config);
 });
 
 afterAll(async () => {
   await browser.deleteSession();
+});
+
+test(`a mocked api response created using WireMock's fixtures`, async () => {
+  await browser.url('http://localhost:8080/dummy_data');
+  const body = await browser.$('body');
+  expect(await body.getText()).toEqual('this is a fixture, and it works!');
 });
 
 test(`a mocked api response created using WireMock's HTTP API`, async () => {
