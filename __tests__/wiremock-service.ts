@@ -4,14 +4,6 @@ import nodeFetch from 'node-fetch';
 
 let browser: WebdriverIO.BrowserObject;
 
-const expectedRes = {
-  dummy: [
-    {
-    data: 'example'
-    }
-  ]
-};
-
 beforeAll(async () => {
   browser = await remote(config);
 });
