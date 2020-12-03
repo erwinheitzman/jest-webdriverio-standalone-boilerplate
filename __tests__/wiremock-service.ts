@@ -15,14 +15,14 @@ afterAll(async () => {
 test(`a mocked api response created using WireMock's fixtures`, async () => {
   await browser.url('http://localhost:8080/dummy_data');
   const body = await browser.$('body');
-  expect(await body.getText()).toEqual('this is a fixture, and it works!');
+  expect(await body.getText()).toEqual('this is a fixture, and it works!\n');
 });
 
 test(`a mocked api response created using WireMock's HTTP API`, async () => {
   const expectedRes = {
     dummy: [
       {
-      data: 'example'
+        data: 'example'
       }
     ]
   };
