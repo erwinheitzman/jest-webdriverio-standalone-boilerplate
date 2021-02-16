@@ -1,7 +1,7 @@
-import { remote } from 'webdriverio';
-import { config } from '../wdio.conf';
+import { remote, Browser } from "webdriverio";
+import { config } from "../wdio.conf";
 
-let browser: WebdriverIO.BrowserObject;
+let browser: Browser<"async">;
 
 beforeAll(async () => {
   browser = await remote(config);
@@ -11,11 +11,13 @@ afterAll(async () => {
   await browser.deleteSession();
 });
 
-test('asynchronous WebdriverIO test', async () => {
-  await browser.url('https://webdriver.io');
-  expect(await browser.getTitle()).toContain('WebdriverIO');
-  const searchBar = await browser.$('#search_input_react');
-  await searchBar.setValue('click');
-  const suggestions = await browser.$('.aa-suggestions');
+test("asynchronous WebdriverIO test", async () => {
+  await browser.url("https://webdriver.io");
+  expect(await browser.getTitle()).toContain("WebdriverIO");
+  const searchButton = await browser.$(".DocSearch-Button");
+  await searchButton.click();
+  const searchBar = await browser.$("#docsearch-input");
+  await searchBar.setValue("click");
+  const suggestions = await browser.$(".DocSearch-Hit");
   await suggestions.waitForExist();
 });
