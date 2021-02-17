@@ -4,6 +4,13 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "types": ["node", "jest", "webdriverio", "@wdio/sync", "node-fetch", "wdio-wiremock-service"]
+    "types": [
+      "node",
+      "node-fetch",
+      "jest",
+      "webdriverio",
+      "webdriverio/async",
+      "wdio-wiremock-service"
+    ]
   }
 }
