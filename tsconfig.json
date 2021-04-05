@@ -8,7 +8,6 @@
       "node",
       "node-fetch",
       "jest",
-      "webdriverio",
       "webdriverio/async",
       "wdio-wiremock-service"
     ]

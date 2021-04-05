@@ -1,6 +1,6 @@
 import { Browser, remote } from "webdriverio";
 import { config } from "../wdio.conf";
-import nodeFetch from "node-fetch";
+import nodeFetch, { Response } from "node-fetch";
 
 let browser: Browser<"async">;
 
@@ -45,7 +45,7 @@ test(`a mocked api response created using WireMock's HTTP API`, async () => {
     });
 
     await nodeFetch("http://localhost:8080/new_data")
-      .then((res: any) => res.json())
-      .then((body: any) => expect(body).toEqual(expectedRes));
+      .then((res: Response) => res.json())
+      .then((body: object) => expect(body).toEqual(expectedRes));
   });
 });
