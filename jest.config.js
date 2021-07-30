@@ -3,5 +3,5 @@ module.exports = {
   testEnvironment: 'node',
   globalSetup: './jest.global.setup.ts',
   globalTeardown: './jest.global.teardown.ts',
-  setupFilesAfterEnv: ['./jest.setup.before-env.ts'],
+  setupFilesAfterEnv: ['./jest.setup.after-env.ts'],
 };
