@@ -1,7 +1,7 @@
-import { launcher as wiremockLauncher } from 'wdio-wiremock-service';
+import { launcher as wmLauncher } from 'wdio-wiremock-service';
 
 export default async function() {
-  global.wiremockLauncher = new wiremockLauncher({ rootDir: '__stubs__' });
+  globalThis.wiremockLauncher = new wmLauncher({ rootDir: '__stubs__', port: 9090 });
 
-  await global.wiremockLauncher.onPrepare();
+  await wiremockLauncher.onPrepare();
 };

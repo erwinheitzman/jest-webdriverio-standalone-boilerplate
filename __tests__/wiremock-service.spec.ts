@@ -1,20 +1,8 @@
-import { Browser, remote } from "webdriverio";
-import { config } from "../wdio.conf";
 import nodeFetch, { Response } from "node-fetch";
 
-let browser: Browser<"async">;
-
-beforeAll(async () => {
-  browser = await remote(config);
-});
-
-afterAll(async () => {
-  await browser.deleteSession();
-});
-
 test(`a mocked api response created using WireMock's fixtures`, async () => {
-  await browser.url("http://localhost:8080/dummy_data");
-  const body = await browser.$("body");
+  await chrome.url("http://localhost:8080/dummy_data");
+  const body = await chrome.$("body");
   expect(await body.getText()).toEqual("this is a fixture, and it works!\n");
 });
 
@@ -38,7 +26,7 @@ test(`a mocked api response created using WireMock's HTTP API`, async () => {
     },
   });
 
-  await browser.call(async () => {
+  await chrome.call(async () => {
     await nodeFetch("http://localhost:8080/__admin/mappings/new", {
       method: "POST",
       body,

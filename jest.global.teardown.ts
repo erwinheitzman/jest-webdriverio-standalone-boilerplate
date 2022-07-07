@@ -1,3 +1,3 @@
 export default async function() {
-  await global.wiremockLauncher.onComplete();
+  await globalThis.wiremockLauncher.onComplete();
 };
