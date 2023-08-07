@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
+    // build
     "target": "es5",
     "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "node",
-      "node-fetch",
-      "jest",
-      "webdriverio/async",
-      "wdio-wiremock-service"
-    ]
-  }
+    "noEmit": true,
+    // import
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // lint
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["__tests__", "*.ts"]
 }

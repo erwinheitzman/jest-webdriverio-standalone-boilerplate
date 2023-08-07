@@ -1,6 +1,9 @@
+import { expect } from "expect-webdriverio";
+import { test } from "@jest/globals";
+
 test("WebdriverIO test 1", async () => {
   await chrome.url("https://webdriver.io");
-  expect(await chrome.getTitle()).toContain("WebdriverIO");
+  await expect(chrome).toHaveTitle("WebdriverIO", { containing: true });
   const searchButton = await chrome.$(".DocSearch-Button");
   await searchButton.click();
   const searchBar = await chrome.$("#docsearch-input");
