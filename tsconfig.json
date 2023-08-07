@@ -3,6 +3,7 @@
     // build
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "Node",
     "skipLibCheck": true,
     "noEmit": true,
     // import
